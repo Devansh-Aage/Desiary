@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className="w-[100vw] h-[100vh] flex justify-center items-center">
     <div className="h-[80vh] w-[80vw] max-w-[1300px] max-h-[900px] flex shadow-2xl rounded-[40px]">
-      <div className="w-[60%] h-full bg-gradient-to-tr from-[#F8B59A] to-[#FDE1EF] via-[#F27EA1] via rounded-l-[40px] flex justify-center items-center">
+      <div className="lg:w-[60%] rounded-r-[40px] lg:rounded-r-none w-full h-full bg-gradient-to-tr from-[#F8B59A] to-[#FDE1EF] via-[#F27EA1] via rounded-l-[40px] flex justify-center items-center">
         <div className="flex-col">
           <p className='text-5xl font-medium text-center tracking-tightiest'>Log-in</p>
           <p className='text-center font-medium text-lg text-[#3A3A3A]' >Where have you been?</p>
@@ -49,7 +49,7 @@ const Login = () => {
           <button className='mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg' >Login using Google</button>
         </div>
       </div>
-      <div className="w-[40%] h-full bg-[#FFE8E8] rounded-r-[40px]">
+      <div className="w-[40%] hidden lg:flex h-full bg-[#FFE8E8] rounded-r-[40px]">
         
       </div>
     </div>

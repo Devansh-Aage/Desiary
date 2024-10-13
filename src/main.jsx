@@ -11,22 +11,23 @@ import Travel from './pages/Travel.jsx'
 import Memories from './pages/Memories.jsx'
 import Journal from './pages/Journal.jsx'
 import Home from './pages/Home.jsx'
+import Journalopen from './pages/Journalopen.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+      <Route path='/home/user' element={<Layout/>} >
+        <Route path='wishlist' element={<Wishlist/>} />
+        <Route path='travel' element={<Travel/>} />
+        <Route path='memories' element={<Memories/>} />
+        <Route path='journal' element={<Journal/>} >
+          <Route path=':id' element={<Journalopen/>} />
+        </Route>
+        <Route index element={<Profile/>} />
+      </Route>
       <Route path='/' element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
-      <Route path='/home' element={<Home/>}>
-        <Route path='user' element={<Layout/>} >
-          <Route index element={<Navigate to='profile'/>} />
-          <Route path='wishlist' element={<Wishlist/>} />
-          <Route path='travel' element={<Travel/>} />
-          <Route path='memories' element={<Memories/>} />
-          <Route path='journal' element={<Journal/>} />
-          <Route path='profile' element={<Profile/>} />
-        </Route>
-      </Route>
+      <Route path='/home' element={<Home/>}/>
     </>
   )
 )
