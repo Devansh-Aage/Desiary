@@ -5,8 +5,8 @@ import Navbar from './components/Navbar'
 function Layout() {
   return (
     <div>
-        <Navbar/>
-        <Outlet/>
+      <Navbar/>
+      <Outlet/>
     </div>
   )
 }
