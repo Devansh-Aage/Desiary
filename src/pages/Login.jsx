@@ -1,10 +1,11 @@
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, provider } from "../config/firebase-config";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
 const Login = () => {
   const [userState, setUserState] = useState(null);
+  const navigate = useNavigate();
 
   const handleSignIn = async () => {
     try {
@@ -41,7 +42,7 @@ const Login = () => {
               // onChange={handleChange}
               className='text-lg py-4 px-5 rounded-full outline-none'
             />
-            <button type="submit" className='mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg'>Log In</button>
+            <button type="submit" className='mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg' onClick={()=>navigate('/home')}>Log In</button>
           </form>
           <Link to="/signup" className='text-end mt-1 text-sm'>
             <p className='text-end mt-1 text-sm text-white hover:underline'>Don't have an Account?</p>
