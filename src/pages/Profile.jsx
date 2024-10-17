@@ -80,7 +80,7 @@ function Profile() {
           <button onClick={logout} className="bg-red-600 text-white px-3 py-1 rounded-lg cursor-pointer hover:opacity-80 w-32">Logout</button>
         </div>
         <img
-          src="https://via.placeholder.com/150"
+          src="/user.png"
           alt="profile"
           className="ml-10 rounded-full size-80"
         />

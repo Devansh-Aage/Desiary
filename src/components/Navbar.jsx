@@ -12,7 +12,7 @@ function Navbar() {
         <NavLink to='/home/user/memories' className={({isActive}) => isActive ? "border-b-4 border-[#FEAD8C] h-full flex items-center" : ""}>Memories</NavLink>
         <NavLink to='/home/user/journal' className={({isActive}) => isActive ? "border-b-4 border-[#FEAD8C] h-full flex items-center" : ""}>Journal</NavLink>
         <Link to='/home/user' className="size-10 rounded-full bg-[#E5F9F0] border">
-            <img src="" alt="" className='size-full'/>
+            <img src="/user.png" alt="" className='size-full'/>
         </Link>
       </div>
     </div>

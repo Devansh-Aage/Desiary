@@ -42,18 +42,18 @@ function Wishlist() {
 
   return (
     <div>
-      <div className="px-10 flex flex-wrap">
+      <div className="px-10 flex mt-10 mb-4 flex-wrap">
         {/* Input field and submit button */}
         <input
           type="text"
           value={itemText}
           onChange={(e) => setItemText(e.target.value)}
           placeholder="Add to your wishlist..."
-          className="border border-gray-300 rounded-md px-3 py-2 w-1/2 mb-4"
+          className="border border-gray-300 rounded-md h-full px-3 py-2 w-1/2 "
         />
         <button
           onClick={handleAddItem}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2 hover:bg-blue-600"
+          className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600"
         >
           Add
         </button>

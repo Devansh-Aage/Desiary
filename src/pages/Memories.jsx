@@ -61,17 +61,17 @@ function Memories() {
 
   return (
     <>
-      <div className="px-10 flex flex-wrap">
+      <div className="px-10 flex flex-wrap mt-10 mb-4">
         {/* File input for image uploads */}
         <input
           type="file"
           accept="image/*" // Allow only image files
           onChange={(e) => setImageFile(e.target.files[0])}
-          className="border border-gray-300 rounded-md px-3 py-2 w-1/2 mb-4"
+          className="border border-gray-300 h-full rounded-md px-3 py-2 w-1/2 "
         />
         <button
           onClick={handleAddMemory}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2 hover:bg-blue-600"
+       className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600"
         >
           Submit
         </button>
