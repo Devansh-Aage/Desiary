@@ -13,7 +13,6 @@ const Home = () => {
         <Card title="Memories" image='/memories.jpg' path="/home/user/memories"/>
         <Card title="Journal" image='/journal.jpg' path="/home/user/journal"/>
       </div>
-      
     </div>
   )
 };
