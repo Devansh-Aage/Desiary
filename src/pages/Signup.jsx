@@ -88,12 +88,12 @@ function Signup() {
             </form>
 
             <Link to="/" className='text-end mt-1 text-sm'>
-              <p className='text-end mt-1 text-sm text-white hover:underline'>Already have an Account?</p>
+              <p className='text-center mt-3 text-sm text-white hover:underline'>Already have an Account?</p>
             </Link>
 
-            <button className='mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg'>
+            {/* <button className='mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg'>
               Signup using Google
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="w-[40%] h-full bg-[#FFE8E8] rounded-r-[40px]"></div>
