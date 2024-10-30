@@ -104,7 +104,7 @@ const Login = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="text-lg py-4 px-5 rounded-full outline-none"
+                className="text-lg py-4 px-5 rounded-xl outline-none"
                 required
               />
               <input
@@ -113,12 +113,12 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="text-lg py-4 px-5 rounded-full outline-none"
+                className="text-lg py-4 px-5 rounded-xl outline-none"
                 required
               />
               <button
                 type="submit"
-                className="mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-full hover:-translate-y-1 transition-all duration-300 hover:shadow-lg"
+                className="mt-2 text-center min-w-full bg-[#F4F6F9] text-black py-4 rounded-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-lg"
                 disabled={isSigningIn}
               >
                 {isSigningIn ? "Signing in..." : "Log In with Email"}
