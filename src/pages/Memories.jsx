@@ -61,47 +61,51 @@ function Memories() {
 
   return (
     <>
-      <div className="px-10 flex flex-wrap mt-10 mb-4">
+      <div className="flex justify-center items-center py-4">
         {/* File input for image uploads */}
         <input
           type="file"
           accept="image/*" // Allow only image files
           onChange={(e) => setImageFile(e.target.files[0])}
           className="border border-gray-300 h-full rounded-md px-3 py-2 w-1/2 "
+          onKeyDown={(key)=>{
+            if (key.key) {
+              handleAddMemory()
+            }
+          }}
         />
         <button
           onClick={handleAddMemory}
-       className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600"
+       className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600 py-2"
         >
           Submit
         </button>
       </div>
 
       {/* Displaying the list of memories */}
-      <div className="px-10">
-        <h2 className="text-xl font-bold mb-4">Your Memories</h2>
-        <ul className="list-disc pl-5">
-          {memories.map((memory) => (
-            <li key={memory.id} className="mb-2">
-              {/* Display the image if it exists */}
+      <div className="p-10">
+        <h2 className="text-4xl font-bold mb-4 font-alexBrush">Your Memories</h2>
+        <div className="w-full flex flex-wrap gap-2">
+          {memories.map((memory)=>(
+            <div key={memory.id} className="flex flex-col border border-slate-300 max-w-[33%] gap-2">
               {memory.imageUrl && (
                 <img
                   src={memory.imageUrl}
                   alt="Memory"
-                  className="w-64 h-64 object-cover mb-2"
+                  className="w-full h-full object-cover"
                 />
               )}
               <span className="text-gray-500 text-sm">
                 {new Date(memory.timestamp.seconds * 1000).toLocaleString()}
               </span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
-
+{/* 
       <div className="fixed size-16 bg-[#FF69AA] z-10 rounded-full flex items-center justify-center bottom-10 right-10 cursor-pointer shadow-2xl hover:-translate-y-2 duration-300">
         <img src="/upload.png" alt="add" className="size-8" />
-      </div>
+      </div> */}
     </>
   );
 }
