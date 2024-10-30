@@ -41,34 +41,35 @@ function Wishlist() {
   };
 
   return (
-    <div>
-      <div className="px-10 flex mt-10 mb-4 flex-wrap">
-        {/* Input field and submit button */}
-        <input
-          type="text"
-          value={itemText}
-          onChange={(e) => setItemText(e.target.value)}
-          placeholder="Add to your wishlist..."
-          className="border border-gray-300 rounded-md h-full px-3 py-2 w-1/2 "
-        />
-        <button
-          onClick={handleAddItem}
-          className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600"
-        >
-          Add
-        </button>
-      </div>
-
-      {/* Displaying the list of wishlist items */}
-      <div className="px-10">
-        <h2 className="text-xl font-bold mb-4">Your Wishlist</h2>
+    <div className='w-full h-[93vh] flex flex-col'>
+      <div className="p-8 w-full h-full flex-1 relative">
+        <h2 className="text-4xl font-alexBrush font-bold mb-4">Your Wishlist</h2>
         <ul className="list-disc pl-5">
           {wishlist.map((item) => (
-            <li key={item.id} className="mb-2">
-              {item.text} <span className="text-gray-500 text-sm">{new Date(item.timestamp.seconds * 1000).toLocaleString()}</span>
+            <li key={item.id} className="mb-2 text-lg">
+              {item.text} <span className="text-gray-500 text-sm font-sans">{new Date(item.timestamp.seconds * 1000).toLocaleString()}</span>
             </li>
           ))}
         </ul>
+        <div className="fixed bottom-6 w-full flex justify-center items-center">
+          <input
+            type="text"
+            value={itemText}
+            onChange={(e) => setItemText(e.target.value)}
+            placeholder="Add to your wishlist..."
+            className="border bg-slate-200 border-gray-300 rounded-md h-full px-3 py-2 w-1/2 "
+            onKeyDown={(key)=>{
+              if (key.key==='Enter') {
+              handleAddItem()
+            }}}
+          />
+          <button
+            onClick={handleAddItem}
+            className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600 py-2"
+          >
+            Add
+          </button>
+        </div>
       </div>
     </div>
   );

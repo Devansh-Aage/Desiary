@@ -41,36 +41,37 @@ function Travel() {
   };
 
   return (
-    <div>
-      <div className="px-10 flex flex-wrap mb-4 mt-10">
-        {/* Input field and submit button */}
+    <div className='w-full h-[93vh] flex flex-col'>
+    <div className="p-8 w-full h-full flex-1 relative">
+      <h2 className="text-4xl font-alexBrush font-bold mb-4">Your TravelList</h2>
+      <ul className="list-disc pl-5">
+        {travelEntries.map((item) => (
+          <li key={item.id} className="mb-2 text-lg">
+            {item.text} <span className="text-gray-500 text-sm font-sans">{new Date(item.timestamp.seconds * 1000).toLocaleString()}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="fixed bottom-6 w-full flex justify-center items-center">
         <input
           type="text"
           value={travelText}
           onChange={(e) => setTravelText(e.target.value)}
-          placeholder="Where do you want to travel?"
-          className="border border-gray-300 rounded-md px-3 py-2 w-1/2 h-full"
+          placeholder="Add to your wishlist..."
+          className="border bg-slate-200 border-gray-300 rounded-md h-full px-3 py-2 w-1/2 "
+          onKeyDown={(key)=>{
+            if (key.key==="Enter") {
+              handleAddEntry()
+          }}}
         />
         <button
           onClick={handleAddEntry}
-          className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600"
+          className="bg-fuchsia-400 text-white px-4 rounded-md ml-2 hover:bg-fuchsia-600 py-2"
         >
           Add
         </button>
       </div>
-
-      {/* Displaying the list of travel entries */}
-      <div className="px-10">
-        <h2 className="text-xl font-bold mb-4">Your Travel Entries</h2>
-        <ul className="list-disc pl-5">
-          {travelEntries.map((entry) => (
-            <li key={entry.id} className="mb-2">
-              {entry.text} <span className="text-gray-500 text-sm">{new Date(entry.timestamp.seconds * 1000).toLocaleString()}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
+  </div>
   );
 }
 
