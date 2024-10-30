@@ -48,7 +48,7 @@ function Signup() {
   return (
     <div className="w-[100vw] h-[100vh] flex justify-center items-center">
       <div className="h-[80vh] w-[80vw] max-w-[1300px] max-h-[900px] flex shadow-2xl rounded-[40px]">
-        <div className="w-[60%] h-full bg-gradient-to-tr from-[#F8B59A] to-[#FDE1EF] via-[#F27EA1] via rounded-l-[40px] flex justify-center items-center">
+        <div className="w-[100%] lg:w-[60%] h-full bg-gradient-to-tr from-[#F8B59A] to-[#FDE1EF] via-[#F27EA1] rounded-[40px] flex justify-center items-center lg:rounded-r-none">
           <div className="flex-col">
             <p className='text-5xl font-medium text-center tracking-tightiest'>Sign up</p>
             <p className='text-center font-medium text-lg text-[#3A3A3A]'>Start your journey with us</p>
@@ -96,7 +96,7 @@ function Signup() {
             </button> */}
           </div>
         </div>
-        <div className="w-[40%] h-full bg-[#FFE8E8] rounded-r-[40px]"></div>
+        <div className="lg:w-[40%] h-full bg-[#FFE8E8] rounded-r-[40px]"></div>
       </div>
     </div>
   );
