@@ -64,18 +64,20 @@ function Profile() {
           >
             Privacy Settings
           </button>
-          <div className={`${show ? "block" : "hidden"} absolute -bottom-36`}>
-            <div className={`px-2 py-4 text-start rounded-lg bg-[#E5F9F0]`}>
+          <div className={`${show ? "block" : "hidden"} absolute -bottom-36 flex bg-[#E5F9F0] rounded-lg items-center px-2 gap-2`}>
+            <div className={`px-2 py-4 text-start`}>
               <p>Public</p>
               <p
-                className={` text-sm text-gray-500 ${
-                  show ? "block" : "hidden"
-                }`}
+                className='text-sm text-gray-500 '
               >
                 Change your privacy setting for other users of the app to see
                 your profile in their travel section of not visited places.
               </p>
             </div>
+            <label class="relative inline-block w-40 h-8">
+              <input type="checkbox" class="opacity-0 w-0 h-0 peer"/>
+              <span class="absolute cursor-pointer inset-0 bg-gray-300 transition-colors duration-400 rounded-full peer-checked:bg-blue-500 peer-focus:ring-1 peer-focus:ring-blue-500 before:absolute before:content-[''] before:h-6 before:w-6 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-transform before:duration-400  peer-checked:before:translate-x-7"></span>
+            </label>
           </div>
           <button onClick={logout} className="bg-red-600 text-white px-3 py-1 rounded-lg cursor-pointer hover:opacity-80 w-32">Logout</button>
         </div>
